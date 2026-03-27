@@ -30,6 +30,9 @@ jobs:
           # GITHUB_TOKEN est injecté automatiquement — jamais stocker de token dans le code !
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Configurer Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Extraire les métadonnées Docker
         id: meta
         uses: docker/metadata-action@v5
